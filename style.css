@@ -1,0 +1,303 @@
+/* ==========================================================
+   Mini · UGC Creator · portfólio criativo
+   Estética: chocolate + rosa + creme, listras, polaroids
+   com fita, bolinhas, renda, cursiva sobre serifa.
+   ========================================================== */
+
+/* ---------- 1. VARIÁVEIS (mude aqui e o site todo muda) ---------- */
+:root {
+  --creme: #F7EFE5;          /* fundo claro principal */
+  --papel: #FFFAF3;          /* fichas e polaroids */
+  --chocolate: #3A231E;      /* fundo escuro */
+  --chocolate-2: #462B25;    /* listra do fundo escuro */
+  --rosa: #F3C9D4;           /* rosa principal */
+  --rosa-escuro: #C97A90;    /* rosa para texto e detalhes */
+  --texto: #3A231E;
+  --texto-suave: #7A5F57;
+
+  --fonte-titulo: "Bodoni Moda", "Didot", Georgia, serif;
+  --fonte-cursiva: "Pinyon Script", "Brush Script MT", cursive;
+  --fonte-maquina: "Courier Prime", "Courier New", monospace;
+  --fonte-texto: "Jost", "Segoe UI", Arial, sans-serif;
+
+  --margem-lateral: 6vw;
+  color-scheme: light;
+}
+
+/* ---------- 2. BASE ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+a:focus-visible { outline: 2px dashed var(--rosa-escuro); outline-offset: 4px; }
+section { padding: 80px var(--margem-lateral); }
+
+/* Fundos especiais */
+.listras {
+  background: repeating-linear-gradient(90deg, var(--chocolate) 0 22px, var(--chocolate-2) 22px 44px);
+  color: var(--creme);
+}
+.bolinhas {
+  background-color: var(--rosa);
+  background-image: radial-gradient(var(--chocolate) 2.2px, transparent 2.6px);
+  background-size: 26px 26px;
+}
+.rosa-fundo { background: var(--rosa); }
+
+/* Borda de renda: ondinhas creme + furinhos */
+.renda {
+  height: 20px;
+  background:
+    radial-gradient(circle at 10px 4px, var(--chocolate) 2px, transparent 2.5px) 0 0 / 20px 20px repeat-x,
+    radial-gradient(circle at 10px 0, var(--chocolate) 10px, transparent 10.5px) 0 0 / 20px 20px repeat-x,
+    var(--creme);
+}
+.renda.virada { transform: scaleY(-1); }
+
+/* ---------- 3. ELEMENTOS REUTILIZÁVEIS ---------- */
+.maquina { font-family: var(--fonte-maquina); letter-spacing: 0.04em; }
+.pequeno { font-size: 0.85rem; }
+.centro { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* Título serifado + palavra em cursiva */
+.titulo-misto {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 32px;
+  color: var(--chocolate);
+}
+.titulo-misto.claro { color: var(--creme); }
+.cursiva {
+  font-family: var(--fonte-cursiva);
+  font-size: 1.25em;
+  color: var(--rosa-escuro);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.claro .cursiva, .listras .cursiva { color: var(--rosa); }
+
+/* Polaroid com fita adesiva */
+.polaroid {
+  position: relative;
+  background: var(--papel);
+  padding: 12px 12px 40px;
+  box-shadow: 0 10px 24px rgba(40, 20, 15, 0.25);
+}
+.polaroid img, .polaroid .foto-vazia { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; }
+.fita {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 90px;
+  height: 28px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(243, 201, 212, 0.75);
+  z-index: 2;
+}
+.inclinada-esq { transform: rotate(-4deg); }
+.inclinada-dir { transform: rotate(4deg); }
+.legenda { position: absolute; bottom: 8px; left: 0; right: 0; margin: 0; text-align: center; font-family: var(--fonte-cursiva); font-size: 1.4rem; color: var(--chocolate); }
+
+/* Espaço reservado enquanto não tem foto */
+.foto-vazia {
+  display: grid;
+  place-items: center;
+  background: repeating-linear-gradient(135deg, #EAD9CF 0 10px, #F3E7DE 10px 20px);
+  color: var(--texto-suave);
+  font-family: var(--fonte-maquina);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Botão em pílula */
+.botao {
+  display: inline-block;
+  padding: 10px 26px;
+  border: 1.5px solid var(--rosa);
+  border-radius: 999px;
+  font-family: var(--fonte-maquina);
+  text-decoration: none;
+  color: var(--rosa);
+}
+.botao:hover { background: var(--rosa); color: var(--chocolate); }
+
+/* Ficha estilo papel datilografado */
+.ficha {
+  background: var(--papel);
+  padding: 28px 30px;
+  font-family: var(--fonte-maquina);
+  font-size: 0.88rem;
+  color: var(--chocolate);
+  box-shadow: 0 10px 24px rgba(40, 20, 15, 0.2);
+  /* bordinha picotada em cima e embaixo */
+  -webkit-mask: radial-gradient(circle 5px at 8px 0, transparent 98%, #000) -8px 0 / 16px 100% repeat-x;
+  mask: radial-gradient(circle 5px at 8px 0, transparent 98%, #000) -8px 0 / 16px 100% repeat-x;
+}
+.ficha-topo { text-align: center; font-weight: 700; letter-spacing: 0.12em; margin: 0 0 18px; }
+.ficha-topo small { font-weight: 400; letter-spacing: 0.04em; text-transform: none; }
+.ficha dl { margin: 0; }
+.ficha dt { text-transform: uppercase; font-weight: 700; margin-top: 12px; }
+.ficha dd { margin: 0; color: var(--texto-suave); border-bottom: 1px dashed #D9C6BC; padding-bottom: 8px; }
+
+/* Enfeites */
+.enfeite { position: absolute; pointer-events: none; }
+
+/* Celulares */
+.tela {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19;
+  border: 7px solid #120B09;
+  border-radius: 30px;
+  background: repeating-linear-gradient(135deg, #EAD9CF 0 10px, #F3E7DE 10px 20px);
+  display: grid;
+  place-items: center;
+  object-fit: cover;
+}
+div.tela::before { content: ""; position: absolute; top: 7px; width: 34%; height: 12px; border-radius: 999px; background: #120B09; }
+.tela.clara { border-color: var(--papel); }
+.tela.clara::before { background: var(--papel); }
+.play { width: 46px; height: 46px; border-radius: 50%; background: rgba(255, 250, 243, 0.85); display: grid; place-items: center; }
+.play::after { content: ""; margin-left: 4px; border-left: 14px solid var(--chocolate); border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+
+/* ---------- 4. MENU ---------- */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 34px;
+  padding: 14px var(--margem-lateral);
+  background: var(--rosa);
+  border-bottom: 1px solid var(--chocolate);
+}
+.menu a { font-family: var(--fonte-maquina); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; }
+.menu a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- 5. CAPA ---------- */
+.capa { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6vw; align-items: center; padding: 80px var(--margem-lateral) 90px; }
+.capa-foto { position: relative; max-width: 380px; width: 100%; justify-self: center; }
+.laco-capa { width: 74px; height: 56px; fill: var(--rosa); top: -30px; right: -28px; transform: rotate(14deg); }
+.coracao-capa { width: 30px; height: 30px; fill: var(--rosa-escuro); bottom: 30px; left: -38px; }
+.capa-texto { display: grid; gap: 10px; justify-items: start; }
+.capa-titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 7.5vw, 6rem);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+.rosa-txt { color: var(--rosa); }
+.assinatura {
+  font-family: var(--fonte-cursiva);
+  color: var(--rosa);
+  font-size: clamp(3rem, 7vw, 5.4rem);
+  line-height: 1.1;
+  margin: 0;
+}
+.capa .maquina { margin: 0; font-size: 0.9rem; opacity: 0.9; }
+.capa .botao { margin-top: 16px; }
+
+/* ---------- 6. SOBRE ---------- */
+.sobre { display: grid; grid-template-columns: 0.7fr 1.3fr 1.2fr; gap: 0; padding: 0; align-items: stretch; }
+.tirinha { display: grid; gap: 18px; padding: 50px 28px; background: var(--papel); align-content: center; }
+.tirinha .polaroid { padding: 8px 8px 22px; }
+.tirinha .polaroid:nth-child(odd) { transform: rotate(-3deg); }
+.tirinha .polaroid:nth-child(even) { transform: rotate(3deg); }
+.tirinha .foto-vazia { aspect-ratio: 4 / 3; }
+.sobre-texto { padding: 70px 5vw; align-self: center; }
+.sobre-texto p { max-width: 52ch; }
+.sobre-ficha { position: relative; padding: 70px 5vw; display: grid; align-items: center; }
+.laco-ficha { width: 60px; height: 46px; fill: var(--chocolate); top: 46px; right: 8%; transform: rotate(-12deg); }
+
+/* ---------- 7. POR QUE UGC ---------- */
+.por-que { border-top: 1px solid #E2D2C6; }
+.motivos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; }
+.motivos article { text-align: center; padding: 0 12px; }
+.motivos .num { font-family: var(--fonte-cursiva); font-size: 2.4rem; color: var(--rosa-escuro); line-height: 1; }
+.motivos h3 { font-family: var(--fonte-titulo); font-weight: 500; font-size: 1.35rem; margin: 6px 0 8px; }
+.motivos h3::after { content: ""; display: block; width: 40px; height: 1px; background: var(--chocolate); margin: 10px auto 0; }
+.motivos p { margin: 0; color: var(--texto-suave); }
+
+/* ---------- 8. NICHOS & SERVIÇOS ---------- */
+.nichos-grade { display: grid; grid-template-columns: 1fr auto 1fr; gap: 5vw; align-items: center; }
+.pilulas { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; justify-items: start; }
+.pilulas li {
+  background: var(--chocolate);
+  color: var(--creme);
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+}
+.pilulas li:nth-child(even) { margin-left: 24px; }
+.arco { width: min(280px, 60vw); border: 6px solid var(--papel); border-radius: 160px 160px 18px 18px; overflow: hidden; box-shadow: 0 12px 26px rgba(40, 20, 15, 0.2); }
+.arco .foto-vazia { aspect-ratio: 3 / 4; }
+.lista-servicos { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; text-transform: uppercase; font-size: 0.88rem; }
+.lista-servicos li::before { content: "— "; color: var(--rosa-escuro); }
+
+/* ---------- 9. VÍDEOS ---------- */
+.celulares { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4vw; max-width: 1100px; margin: 0 auto; }
+.celulares figure { margin: 0; display: grid; gap: 14px; justify-items: center; }
+.celulares .tela { max-width: 220px; }
+.celulares figcaption { font-family: var(--fonte-titulo); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--creme); text-align: center; }
+
+/* ---------- 10. PROJETO EM DESTAQUE ---------- */
+.destaque { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5vw; align-items: center; }
+.destaque .titulo-misto .cursiva { color: var(--chocolate); }
+.ficha-larga { max-width: 520px; }
+.destaque-celulares { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 440px; justify-self: center; width: 100%; }
+.destaque-celulares .tela:nth-child(2) { transform: translateY(40px); }
+
+/* ---------- 11. FOTOGRAFIA ---------- */
+.intro { max-width: 52ch; margin-top: -18px; margin-bottom: 44px; color: var(--texto-suave); }
+.mural { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; max-width: 1100px; margin: 0 auto; }
+.mural .polaroid:nth-child(1) { transform: rotate(-3deg); }
+.mural .polaroid:nth-child(2) { transform: rotate(2deg) translateY(18px); }
+.mural .polaroid:nth-child(3) { transform: rotate(-1deg); }
+.mural .polaroid:nth-child(4) { transform: rotate(3deg) translateY(12px); }
+
+/* ---------- 12. CONTATO ---------- */
+.contato { display: grid; grid-template-columns: 1.3fr 1fr; gap: 6vw; align-items: center; }
+.contato .assinatura { display: block; margin-top: 4px; }
+.contatos { list-style: none; margin: 34px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; font-size: 0.92rem; }
+.contatos span { display: block; color: var(--rosa); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.12em; }
+.contato-foto { position: relative; max-width: 320px; width: 100%; justify-self: center; }
+.brilho-contato { width: 34px; height: 34px; fill: var(--rosa); top: -20px; left: -26px; }
+
+.rodape { text-align: center; padding: 22px; font-size: 0.8rem; background: var(--chocolate); color: var(--rosa); }
+
+/* ---------- 13. TABLET E CELULAR ---------- */
+@media (max-width: 960px) {
+  .capa, .destaque, .contato { grid-template-columns: 1fr; }
+  .sobre { grid-template-columns: 1fr; }
+  .tirinha { grid-template-columns: repeat(3, 1fr); padding: 40px var(--margem-lateral); }
+  .nichos-grade { grid-template-columns: 1fr; justify-items: center; }
+  .pilulas { justify-items: center; }
+  .pilulas li:nth-child(even) { margin-left: 0; }
+  .celulares, .mural { grid-template-columns: repeat(2, 1fr); }
+  .motivos { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  section { padding: 56px 20px; }
+  .contatos { grid-template-columns: 1fr; }
+  .menu { gap: 4px 16px; }
+  .menu a { font-size: 0.72rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

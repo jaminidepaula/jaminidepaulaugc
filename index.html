@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini · UGC Creator</title>
+<meta name="description" content="Portfólio criativo da Mini, UGC creator em Manaus: beleza, skincare, moda, acessórios e lifestyle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Pinyon+Script&family=Courier+Prime:wght@400;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ ÍCONES REUTILIZÁVEIS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="laco" viewBox="0 0 64 48">
+    <path d="M32 22 C22 6 6 4 6 16 C6 28 22 28 32 22Z M32 22 C42 6 58 4 58 16 C58 28 42 28 32 22Z" />
+    <path d="M30 24 L20 46 L26 44 L31 30 Z M34 24 L44 46 L38 44 L33 30 Z" />
+    <circle cx="32" cy="22" r="5" />
+  </symbol>
+  <symbol id="coracao" viewBox="0 0 24 24">
+    <path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/>
+  </symbol>
+  <symbol id="brilho" viewBox="0 0 100 100">
+    <path d="M50 0 C54 38 62 46 100 50 C62 54 54 62 50 100 C46 62 38 54 0 50 C38 46 46 38 50 0Z"/>
+  </symbol>
+</svg>
+
+<!-- ============ 1. MENU ============ -->
+<nav class="menu" aria-label="Principal">
+  <a href="#sobre">sobre mim</a>
+  <a href="#nichos">nichos &amp; serviços</a>
+  <a href="#videos">vídeos</a>
+  <a href="#fotos">fotografia</a>
+  <a href="#contato">contato</a>
+</nav>
+
+<!-- ============ 2. CAPA ============ -->
+<header class="capa listras" id="topo">
+  <div class="capa-foto">
+    <div class="polaroid inclinada-esq">
+      <span class="fita" aria-hidden="true"></span>
+      <!-- Troque por: <img src="foto-capa.jpg" alt="Mini"> -->
+      <div class="foto-vazia">sua foto aqui</div>
+    </div>
+    <svg class="enfeite laco-capa"><use href="#laco"/></svg>
+    <svg class="enfeite coracao-capa"><use href="#coracao"/></svg>
+  </div>
+
+  <div class="capa-texto">
+    <p class="maquina">nº 01 · edição 2026</p>
+    <h1 class="capa-titulo">PORTFÓLIO<br><span class="rosa-txt">CRIATIVO</span></h1>
+    <p class="assinatura">Mini Carvalho</p>
+    <p class="maquina">UGC creator &amp; criadora de conteúdo<br>Manaus · Amazonas · Brasil</p>
+    <a class="botao" href="#contato">vamos conversar <span style="font-family: var(--fonte-texto)">♡</span></a>
+  </div>
+</header>
+<div class="renda" aria-hidden="true"></div>
+
+<!-- ============ 3. SOBRE MIM ============ -->
+<section class="sobre" id="sobre">
+  <div class="tirinha" aria-label="Tirinha de fotos">
+    <div class="polaroid"><div class="foto-vazia">foto</div></div>
+    <div class="polaroid"><div class="foto-vazia">foto</div></div>
+    <div class="polaroid"><div class="foto-vazia">foto</div></div>
+  </div>
+
+  <div class="sobre-texto">
+    <h2 class="titulo-misto">Oi, eu sou <span class="cursiva">a Mini</span></h2>
+    <p>Sou universitária em Manaus e crio conteúdo do jeito que eu mesma consumo: perto da câmera, sem roteiro engessado e com o produto entrando de verdade na rotina.</p>
+    <p>Gosto de mostrar textura, detalhe e uso real, do skincare da manhã ao look da faculdade, para que quem assiste se imagine usando também.</p>
+    <p class="maquina pequeno">@seuperfil · seu-email@exemplo.com</p>
+  </div>
+
+  <div class="sobre-ficha bolinhas">
+    <div class="ficha">
+      <p class="ficha-topo">SOBRE MIM<br><small>@seuperfil</small></p>
+      <dl>
+        <dt>base</dt><dd>Manaus, AM · Brasil</dd>
+        <dt>idioma</dt><dd>português brasileiro</dd>
+        <dt>nichos</dt><dd>beleza · moda · lifestyle</dd>
+        <dt>estilo de conteúdo</dt><dd>natural · conversado · estético</dd>
+        <dt>formatos</dt><dd>vídeo 9:16 · fotos</dd>
+        <dt>plataformas</dt><dd>TikTok · Reels · anúncios</dd>
+      </dl>
+    </div>
+    <svg class="enfeite laco-ficha"><use href="#laco"/></svg>
+  </div>
+</section>
+
+<!-- ============ 4. POR QUE UGC ============ -->
+<section class="por-que">
+  <h2 class="titulo-misto centro">Por que <span class="cursiva">UGC?</span></h2>
+  <div class="motivos">
+    <article>
+      <span class="num">i.</span>
+      <h3>Parece recomendação</h3>
+      <p>O vídeo tem cara de amiga contando o que usa, e não de comercial. Isso gera mais confiança em quem assiste.</p>
+    </article>
+    <article>
+      <span class="num">ii.</span>
+      <h3>Nativo da plataforma</h3>
+      <p>Gravado no formato e na linguagem do TikTok e do Reels, sem destoar do resto do feed.</p>
+    </article>
+    <article>
+      <span class="num">iii.</span>
+      <h3>Pronto para anúncio</h3>
+      <p>Você recebe variações de gancho para testar o que funciona melhor nos seus anúncios pagos.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 5. NICHOS & SERVIÇOS ============ -->
+<section class="nichos rosa-fundo" id="nichos">
+  <h2 class="titulo-misto">MEUS NICHOS <span class="cursiva">&amp; serviços</span></h2>
+  <div class="nichos-grade">
+    <ul class="pilulas">
+      <li>beleza &amp; skincare</li>
+      <li>moda</li>
+      <li>acessórios &amp; joias</li>
+      <li>lifestyle &amp; rotina</li>
+    </ul>
+    <div class="arco"><div class="foto-vazia">foto</div></div>
+    <ul class="lista-servicos maquina">
+      <li>unboxing</li>
+      <li>arrume-se comigo</li>
+      <li>um dia comigo</li>
+      <li>review de produto</li>
+      <li>try-on de looks</li>
+      <li>fotos de produto</li>
+      <li>material bruto</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6. VÍDEOS ============ -->
+<section class="videos listras" id="videos">
+  <h2 class="titulo-misto claro centro"><span class="cursiva">Videografia</span></h2>
+  <!-- Para colocar um vídeo: troque <div class="tela">…</div> por
+       <video class="tela" src="video1.mp4" controls playsinline muted></video> -->
+  <div class="celulares">
+    <figure><div class="tela"><span class="play" aria-hidden="true"></span></div><figcaption>rotina de skincare</figcaption></figure>
+    <figure><div class="tela"><span class="play" aria-hidden="true"></span></div><figcaption>arrume-se comigo</figcaption></figure>
+    <figure><div class="tela"><span class="play" aria-hidden="true"></span></div><figcaption>unboxing de acessórios</figcaption></figure>
+    <figure><div class="tela"><span class="play" aria-hidden="true"></span></div><figcaption>um dia comigo</figcaption></figure>
+  </div>
+</section>
+<div class="renda" aria-hidden="true"></div>
+
+<!-- ============ 7. PROJETO EM DESTAQUE ============ -->
+<section class="destaque bolinhas" id="destaque">
+  <div class="destaque-texto">
+    <h2 class="titulo-misto claro"><span class="cursiva">Projeto em destaque</span></h2>
+    <div class="ficha ficha-larga">
+      <p class="ficha-topo">VÍDEO DE TESTE · SKINCARE<br><small>exemplo de como eu planejo um vídeo</small></p>
+      <dl>
+        <dt>objetivo</dt><dd>apresentar um hidratante facial com conteúdo do dia a dia, sem cara de propaganda</dd>
+        <dt>gancho</dt><dd>"a única etapa que eu não pulo nem atrasada pra aula"</dd>
+        <dt>meu papel</dt><dd>ideia · gancho · roteiro · gravação · edição</dd>
+        <dt>entregas</dt><dd>1 vídeo editado · 3 ganchos · 3 fotos do produto</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="destaque-celulares">
+    <div class="tela clara"><span class="play" aria-hidden="true"></span></div>
+    <div class="tela clara"><span class="play" aria-hidden="true"></span></div>
+  </div>
+</section>
+
+<!-- ============ 8. FOTOGRAFIA ============ -->
+<section class="fotografia" id="fotos">
+  <h2 class="titulo-misto centro"><span class="cursiva">Fotografia</span></h2>
+  <p class="intro centro">Produto em uso, luz natural e composição pensada para feed, site e anúncio.</p>
+  <div class="mural">
+    <div class="polaroid"><span class="fita" aria-hidden="true"></span><div class="foto-vazia">foto 1</div><p class="legenda">skincare</p></div>
+    <div class="polaroid"><div class="foto-vazia">foto 2</div><p class="legenda">acessórios</p></div>
+    <div class="polaroid"><span class="fita" aria-hidden="true"></span><div class="foto-vazia">foto 3</div><p class="legenda">maquiagem</p></div>
+    <div class="polaroid"><div class="foto-vazia">foto 4</div><p class="legenda">rotina</p></div>
+  </div>
+</section>
+
+<!-- ============ 9. CONTATO ============ -->
+<div class="renda virada" aria-hidden="true"></div>
+<section class="contato listras" id="contato">
+  <div class="contato-texto">
+    <h2 class="capa-titulo">VAMOS CRIAR<br><span class="assinatura">juntas!</span></h2>
+    <ul class="contatos maquina">
+      <li><span>e-mail</span>seu-email@exemplo.com</li>
+      <li><span>instagram</span>@seuperfil</li>
+      <li><span>tiktok</span>@seuperfil</li>
+      <li><span>whatsapp</span>(92) 00000-0000</li>
+    </ul>
+  </div>
+  <div class="contato-foto">
+    <div class="polaroid inclinada-dir">
+      <span class="fita" aria-hidden="true"></span>
+      <div class="foto-vazia">sua foto</div>
+    </div>
+    <svg class="enfeite brilho-contato"><use href="#brilho"/></svg>
+  </div>
+</section>
+
+<footer class="rodape maquina">© 2026 Mini · UGC creator · Manaus, AM</footer>
+
+</body>
+</html>
